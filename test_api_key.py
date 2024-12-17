@@ -1,3 +1,4 @@
+import os
 import openai
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -5,7 +6,6 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 try:
     response = openai.ChatCompletion.create(
         model="gpt-4",
-        # model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": "Hello!"}]
     )
     print(response)
